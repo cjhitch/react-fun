@@ -7,6 +7,7 @@ const person = (props) => {
             <p onClick={props.click}>
                 I'm {props.name} and I am {props.age} years old!
             </p>
+            <img src={props.img} alt="" />
             <p>
                 {props.children}
             </p>

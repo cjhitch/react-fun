@@ -5,9 +5,9 @@ import Person from './Person/Person';
 class App extends Component {
 	state = {
 		persons: [
-			{ id: 0, name: 'Max', age: 28 },
-			{ id: 1, name: 'Manu', age: 29 },
-			{ id: 2, name: 'Stephanie', age: 26 }
+			{ id: 0, name: 'Max', age: 28, img: 'https://miro.medium.com/max/2400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg' },
+			{ id: 1, name: 'Manu', age: 29, img: 'https://www.hd-freewallpapers.com/latest-wallpapers/desktop-image-of-a-parrot-wallpaper.jpg' },
+			{ id: 2, name: 'Stephanie', age: 26, img: 'https://www.remove.bg/assets/start_remove-79a4598a05a77ca999df1dcb434160994b6fde2c3e9101984fb1be0f16d0a74e.png' }
 		],
 		otherState: 'some other value',
 		showPersons: false
@@ -43,7 +43,8 @@ class App extends Component {
 
 	render() {
 		const style = {
-			backgroundColor: 'white',
+			backgroundColor: 'green',
+			color: 'white',
 			font: 'inherit',
 			border: '1px solid blue',
 			padding: '8px',
@@ -59,13 +60,16 @@ class App extends Component {
 						return <Person
 							click={() => this.deletePersonHandler(index)}
 							name={person.name}
-							age={person.age} 
+							age={person.age}
+							img={person.img} 
 							key={person.id}
 							changed={(event) => this.nameChangedHandler(event, person.id)}
 							/>
 					})}
 				</div>
 			);
+
+			style.backgroundColor = 'red';
 		}
 
 		return (
